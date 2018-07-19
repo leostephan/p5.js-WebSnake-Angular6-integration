@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+html {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#87e0fd), color-stop(40%,#53cbf1), color-stop(100%,#05abe0));
+}
+
+.custom-btn {
+  background-color: black;
+  color: yellow;
+  font-family: 'Lobster', cursive;
+  margin-right: 2em;
+  padding: 0.5em 1.2em 0.5em 1.2em;
+  border-radius: 10rem;
+}
+
+.custom-btn:hover {
+  background-color: rgb(41, 40, 40);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#87fdaa), color-stop(40%,#37e96c), color-stop(100%,#00be39));
+  color: yellow;
+  font-family: 'Lobster', cursive;
+  font-style: bold !important;
+  transition: all 0.8s;
+  -webkit-transition: all 0.8s;
+  transform: scale(1.2);
+}
+
+.custom-navbar {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#87e0fd), color-stop(40%,#53cbf1), color-stop(100%,#05abe0));
+}
