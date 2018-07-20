@@ -15,7 +15,7 @@ export class LorenzAttractorComponent implements OnInit {
   }
 
   private createCanvas() {
-    const myCanvas = document.getElementById('my-canvas');
+    const myCanvas = document.getElementById('my-lorenz-attractor-canvas');
     this.p5 = new p5(this.sketch, myCanvas);
   }
 
@@ -31,16 +31,16 @@ export class LorenzAttractorComponent implements OnInit {
     const points: Array<PVector> = new Array<PVector>();
 
     p.setup = () => {
-      p.createCanvas(600, 600);
+      p.createCanvas(800, 600);
       p.colorMode(p.HSB);
       p.background(0);
     };
 
     p.draw = () => {
       const dt = 0.01;
-      const dx = (a * (y - x))  * dt * 2;
-      const dy = (x * (b - z) - y) * dt * 2;
-      const dz = (x * y - c * z) * dt * 2;
+      const dx = (a * (y - x))  * dt;
+      const dy = (x * (b - z) - y) * dt;
+      const dz = (x * y - c * z) * dt;
       x = x + dx;
       y = y + dy;
       z = z + dz;
@@ -58,12 +58,9 @@ export class LorenzAttractorComponent implements OnInit {
       p.beginShape();
       for (const v of points) {
         p.stroke(hu, 255, 255);
-        p.vertex(50 + v.x * 1, 50 + v.y * 1);
+        p.vertex(50 + v.x, 50 + v.y);
         hu += incr;
-        if (hu >= 255) {
-          incr = -incr;
-        }
-        if (hu <= 0) {
+        if (hu >= 255 || hu <= 0) {
           incr = -incr;
         }
       }

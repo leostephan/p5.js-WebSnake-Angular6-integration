@@ -17,7 +17,7 @@ export class SnakeComponent implements OnInit {
   }
 
   private createCanvas() {
-    const myCanvas = document.getElementById('my-canvas');
+    const myCanvas = document.getElementById('my-snake-canvas');
     this.p5 = new p5(this.sketch, myCanvas);
   }
 

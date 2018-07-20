@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SnakeComponent } from './pages/snake/snake.component';
 import { LorenzAttractorComponent } from './pages/lorenz-attractor';
+import { PerlinNoiseComponent } from './pages/perlin-noise';
 
 const ROUTES: Routes = [
   {
@@ -22,6 +23,10 @@ const ROUTES: Routes = [
     component: LorenzAttractorComponent
   },
   {
+    path: 'perlin-noise',
+    component: PerlinNoiseComponent
+  },
+  {
     path: '**',
     redirectTo: '/'
   }
@@ -32,7 +37,8 @@ const ROUTES: Routes = [
     AppComponent,
     HomeComponent,
     SnakeComponent,
-    LorenzAttractorComponent
+    LorenzAttractorComponent,
+    PerlinNoiseComponent
   ],
   imports: [
     RouterModule.forRoot(ROUTES),
