@@ -1,5 +1,160 @@
-<div class="container">
-  <div class="jumbotron mt-5">
-    <h1>Different p5.js creations integrated in Angular 6</h1>
+<div class="fixed-element" [@enterAnimation]>
+  <ul class="list">
+    <li>
+      <button id="homeBtn"
+        type="button" class="btn btn-primarly"
+        (click)="stopPerlinNoise()"
+        [@enterAnimation]
+        [ngx-scroll-to-duration]="1000"
+        [ngx-scroll-to]="'home'"
+        [ngx-scroll-to-easing]="'easeInOutQuint'"
+        [ngx-scroll-to-event]="'click'">Home
+      </button>
+    </li>
+    <li>
+      <button id="presentBtn" type="button" class="btn btn-primarly"
+        (click)="stopPerlinNoise()"
+        [@enterAnimation]
+        [ngx-scroll-to-duration]="1000"
+        [ngx-scroll-to]="'presentation'"
+        [ngx-scroll-to-easing]="'easeInOutQuint'"
+        [ngx-scroll-to-event]="'click'">Who am I?
+      </button>
+    </li>
+    <li>
+      <button id="bullshitBtn" type="button" class="btn btn-primarly"
+        (click)="stopPerlinNoise()"
+        [@enterAnimation]
+        [ngx-scroll-to-duration]="1000"
+        [ngx-scroll-to]="'bullshit'"
+        [ngx-scroll-to-easing]="'easeInOutQuint'"
+        [ngx-scroll-to-event]="'click'">Creations and interests
+      </button>
+    </li>
+    <li>
+      <button id="contactBtn" type="button" class="btn btn-primarly"
+        (click)="stopPerlinNoise()"
+        [@enterAnimation]
+        [ngx-scroll-to-duration]="1000"
+        [ngx-scroll-to]="'contact'"
+        [ngx-scroll-to-easing]="'easeInOutQuint'"
+        [ngx-scroll-to-event]="'click'">Contact
+      </button>
+    </li>
+  </ul>
+</div>
+<div class="home" id="home">
+  <app-perlin-noise-component></app-perlin-noise-component>
+  <div class="my-border" [@enterAnimation]>
+    <span class="text-on-border">
+      Léo Stephan
+      <br>—<br>
+      Front-End Developer
+    </span>
   </div>
+
+  <button id="home-next-page-btn" type="button" class="btn btn-primarly go-down-btn"
+  (click)="stopPerlinNoise()" 
+  [@enterAnimation]
+  [ngx-scroll-to-duration]="1000"
+  [ngx-scroll-to]="'presentation'"
+  [ngx-scroll-to-easing]="'easeInOutQuint'"
+  [ngx-scroll-to-event]="'click'">
+    <i class="fas fa-arrow-down"></i>
+  </button>
+</div>
+
+<div data-aos="zoom-in" id="presentation" class="jumbotron">
+  <button type="button" class="btn btn-primarly go-up-btn"
+  (click)="stopPerlinNoise()" 
+  [@enterAnimation]
+  [ngx-scroll-to-duration]="1000"
+  [ngx-scroll-to]="'home'"
+  [ngx-scroll-to-easing]="'easeInOutQuint'"
+  [ngx-scroll-to-event]="'click'">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <h1 class="title">Who am I ?</h1>
+  <img src="../../../assets/img/Moi.PNG" class="me-img">
+  <p class="container biography">
+    Currently studying in 4th year at EPITA, a french IT engineering school based in Paris, I'm also working at 3IE, an innovative lab created by the school, as Front-End Web Developer.
+    I'm currently learning Angular 6 and try to keep being aware of the dozens of new awesome JS libraries that come out everyday!
+    <br>I'm also a great gamer so that's why you might find some of my projects related to that!
+  </p>
+  <button type="button" class="btn btn-primarly go-down-btn"
+  (click)="stopPerlinNoise()" 
+  [@enterAnimation]
+  [ngx-scroll-to-duration]="1000"
+  [ngx-scroll-to]="'bullshit'"
+  [ngx-scroll-to-easing]="'easeInOutQuint'"
+  [ngx-scroll-to-event]="'click'">
+    <i class="fas fa-arrow-down"></i>
+  </button>
+</div>
+
+<div data-aos="zoom-in" id="bullshit" class="jumbotron">
+    <button type="button" class="btn btn-primarly go-up-btn"
+    (click)="stopPerlinNoise()" 
+    [@enterAnimation]
+    [ngx-scroll-to-duration]="1000"
+    [ngx-scroll-to]="'presentation'"
+    [ngx-scroll-to-easing]="'easeInOutQuint'"
+    [ngx-scroll-to-event]="'click'">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  <div class="container">
+    <h1 class="title">Creations and interests</h1>
+    <a href="https://www.youtube.com/watch?v=vwGnXKNGjT0" target="_blank">
+      <caption style="text-align: center;"><img src="../../../assets/img/28055659_2004628999854586_4998804182445321826_n.jpg" style="cursor: pointer;" class="me-img">(High five the pupper by clicking on his paw)</caption>
+
+    </a>
+    <app-snake-component></app-snake-component>
+  </div>
+  <button type="button" class="btn btn-primarly go-down-btn"
+  (click)="stopPerlinNoise()" 
+  [@enterAnimation]
+  [ngx-scroll-to-duration]="1000"
+  [ngx-scroll-to]="'contact'"
+  [ngx-scroll-to-easing]="'easeInOutQuint'"
+  [ngx-scroll-to-event]="'click'">
+    <i class="fas fa-arrow-down"></i>
+  </button>
+</div>
+
+<div data-aos="zoom-in" id="contact" class="jumbotron">
+  <button type="button" class="btn btn-primarly go-up-btn"
+  (click)="stopPerlinNoise()" 
+  [@enterAnimation]
+  [ngx-scroll-to-duration]="1000"
+  [ngx-scroll-to]="'bullshit'"
+  [ngx-scroll-to-easing]="'easeInOutQuint'"
+  [ngx-scroll-to-event]="'click'">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <h1 class="title">Contact</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="96" viewBox="0 0 24 24">
+        <a xlink:href="https://www.linkedin.com/in/l%C3%A9o-stephan-31938ab5/" target="_blank">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </a>
+      </svg>
+    </div>
+    <div class="col-md-4">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="96" viewBox="0 0 24 24">
+        <a xlink:href="https://github.com/crasymagic" target="_blank">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z"/>
+        </a>
+      </svg>
+    </div>
+    <div class="col-md-4">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="96" viewBox="0 0 24 24">
+        <a xlink:href="mailto:leo.stephan@epita.fr" target="_blank">
+          <path d="M13.718 10.528c0 .792-.268 1.829-.684 2.642-1.009 1.98-3.063 1.967-3.063-.14 0-.786.27-1.799.687-2.58 1.021-1.925 3.06-1.624 3.06.078zm10.282 1.472c0 6.627-5.373 12-12 12s-12-5.373-12-12 5.373-12 12-12 12 5.373 12 12zm-5-1.194c0-3.246-2.631-5.601-6.256-5.601-4.967 0-7.744 3.149-7.744 7.073 0 3.672 2.467 6.517 7.024 6.517 2.52 0 4.124-.726 5.122-1.288l-.687-.991c-1.022.593-2.251 1.136-4.256 1.136-3.429 0-5.733-2.199-5.733-5.473 0-5.714 6.401-6.758 9.214-5.071 2.624 1.642 2.524 5.578.582 7.083-1.034.826-2.199.799-1.821-.756 0 0 1.212-4.489 1.354-4.975h-1.364l-.271.952c-.278-.785-.943-1.295-1.911-1.295-2.018 0-3.722 2.19-3.722 4.783 0 1.73.913 2.804 2.38 2.804 1.283 0 1.95-.726 2.364-1.373-.3 2.898 5.725 1.557 5.725-3.525z"/>
+        </a>
+      </svg>
+    </div>
+  </div>
+  <p>
+  </p>
 </div>

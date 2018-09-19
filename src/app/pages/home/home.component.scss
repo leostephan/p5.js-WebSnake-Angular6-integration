@@ -1,3 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Inder');
+
+html, div {
+  font-family: 'Inder', sans-serif;
+}
+
 .jumbotron {
   background: -webkit-gradient(linear, left top, right top, color-stop(0%,#87fdaa), color-stop(40%,#37e96c), color-stop(100%,#00be39));
+}
+
+.fixed-element {
+  position: fixed;
+  top: 30vh;
+  left: 79%;
+  z-index: 1000;
+} 
+
+.my-border {
+  color: white;
+  text-align: center;
+  opacity: 0.65;
+  position: relative;
+  max-width: 400px;
+  padding: 2em;
+  left: 39.95%;
+  top: -68vh;
+  background: black;
+  border-radius: 5rem;
+}
+
+.text-on-border {
+  opacity: 1;
+}
+
+.go-down-btn {
+  opacity: 0.65;
+  border: none;
+  width: 100px;
+  height: 50px;
+  background: black;
+  color: white;
+  transition: transform 0.8s;
+  margin-top: 5em;
+
+  &:hover {
+    opacity: 0.9;
+    //background: linear-gradient(#e66465, #9198e5);
+    transform: scale(1.1);
+  }
+}
+
+.go-up-btn {
+  opacity: 0.65;
+  border: none;
+  width: 100px;
+  height: 50px;
+  background: black;
+  color: white;
+  transition: transform 0.8s;
+  margin-bottom: 5em;
+
+  &:hover {
+    opacity: 0.9;
+    //background: linear-gradient(#e66465, #9198e5);
+    transform: scale(1.1);
+  }
+}
+
+ul {
+  list-style-type: none;
+  width: 250px;
+  background-color: rgba(185, 128, 239, 0.342);
+  text-align: center;
+  padding: 20px;
+  padding-right: 37px;
+  border-radius: 5px;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+li button {
+  display: block;
+  color: white;
+  width: 100%;
+  margin: 8px;
+  text-decoration: none;
+  transition: transform 0.8s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+#home-next-page-btn {
+  position: absolute;
+  top: 90vh;
+  left: 47.39%;
+  margin-top: 2em;
+}
+
+.home {
+  margin-bottom: -8em;
+}
+
+#homeBtn {
+  background: #111;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+#presentation, #presentBtn {
+  background: linear-gradient(#111, rgb(35, 26, 83));
+  color: white;
+}
+
+#bullshit, #bullshitBtn {
+  background: linear-gradient( rgb(35, 26, 83), rgb(54, 39, 138));
+  color: white;
+}
+
+#contact, #contactBtn {
+  background: linear-gradient(rgb(54, 39, 138), rgb(73, 51, 199));
+  color: white;
+}
+
+.title {
+  margin-bottom: 2em;
+}
+
+.me-img {
+  filter: grayscale(100%);
+  margin-bottom: 2em;
+  border-radius: 8px;
+  transition: filter 0.8s, transform 0.8s;
+  &:hover {
+    transform: scale(1.01);
+    filter: grayscale(0%);
+  }
+}
+
+.biography {
+  font-family: 'Inder', sans-serif;
+  font-size: 110%;
+}
+
+svg {
+  animation: rotate-in 1s;
+}
+
+svg:hover {
+  animation: rotate-out 1s;
+}
+
+@keyframes rotate-in {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes rotate-out {
+  0%   { -webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
 }

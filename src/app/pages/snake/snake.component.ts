@@ -14,6 +14,10 @@ export class SnakeComponent implements OnInit {
 
   ngOnInit() {
     this.createCanvas();
+    setTimeout(() => {
+      document.getElementsByTagName('canvas')[1].style.zIndex = '1000';
+      document.getElementsByTagName('canvas')[1].focus();
+    }, 1000);
   }
 
   private createCanvas() {
@@ -27,12 +31,42 @@ export class SnakeComponent implements OnInit {
     let f: Food;
 
     p.setup = () => {
+      p.createCanvas(600, 600);
+      p.frameRate(10);
       s = new Snake(p);
       f = new Food(p, s);
-      p.createCanvas(600, 600);
-      console.log(s);
-      p.frameRate(10);
-      p.print(s.tail);
+      window.addEventListener('keydown', function(e) {
+        if (e.keyCode === 90) {
+          console.log('UP');
+          if (s.yspeed === 1 && s.tail.length !== 1) {
+            return;
+          }
+          s.dir(0, -1);
+        } else if (e.keyCode === 83) {
+            console.log('DOWN');
+            if (s.yspeed === -1 && s.tail.length !== 1) {
+              return;
+            }
+            s.dir(0, 1);
+        } else if (e.keyCode === 81) {
+            console.log('LEFT');
+            if (s.xspeed === 1 && s.tail.length !== 1) {
+              return;
+            }
+            s.dir(-1, 0);
+        } else if (e.keyCode === 68) {
+            console.log('RIGHT');
+            if (s.xspeed === -1 && s.tail.length !== 1) {
+              return;
+            }
+                s.dir(1, 0);
+        } else if (e.keyCode === 27) {
+          if (s.tail.length > bestScore) {
+            bestScore = s.tail.length - 1;
+          }
+          p.setup();
+        }
+      }, false);
     };
 
     p.draw = () => {
@@ -55,37 +89,6 @@ export class SnakeComponent implements OnInit {
       p.fill(255);
       p.text('Score: ' + (s.tail.length - 1), 0, 32);
       p.text('Best score: ' + (bestScore), 0, 64);
-    };
-
-    p.keyPressed = () => {
-      if (p.keyCode === p.UP_ARROW) {
-          if (s.yspeed === 1 && s.tail.length !== 1) {
-            return;
-          }
-          s.dir(0, -1);
-      } else if (p.keyCode === p.DOWN_ARROW) {
-          if (s.yspeed === -1 && s.tail.length !== 1) {
-            return;
-          }
-          s.dir(0, 1);
-      } else if (p.keyCode === p.LEFT_ARROW) {
-          if (s.xspeed === 1 && s.tail.length !== 1) {
-            return;
-          }
-          s.dir(-1, 0);
-      } else if (p.keyCode === p.RIGHT_ARROW) {
-          if (s.xspeed === -1 && s.tail.length !== 1) {
-            return;
-          }
-              s.dir(1, 0);
-      } else if (p.keyCode === 32) {
-        s.stop();
-      } else if (p.keyCode === 27) {
-        if (s.tail.length > bestScore) {
-          bestScore = s.tail.length - 1;
-        }
-        p.setup();
-      }
     };
   }
 }
